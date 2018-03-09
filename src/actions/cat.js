@@ -3,7 +3,6 @@
 
 import {REACT_APP_API_BASE_URL} from '../config';
  
-
 //Reducer Actions
 export const FETCH_CAT_REQUEST = 'FETCH_CAT_REQUEST';
 export const fetchCatRequest = () => ({
@@ -29,9 +28,14 @@ export const fetchCat = cat => dispatch => {
   fetch(`${REACT_APP_API_BASE_URL}/cat`, {
     method: 'GET',
     })
-    .then((res) => res.json())
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    })
     .then(cat => {
-      console.log(cat);
+      dispatch(fetchCatSuccess(cat));
     })
     .catch(err => dispatch(fetchCatError(err)));
 }
@@ -40,6 +44,8 @@ export const fetchCat = cat => dispatch => {
 export const adoptCat = cat => dispatch => {
   fetch(`${REACT_APP_API_BASE_URL}/cat`, {
     method: 'DELETE',
+  }).then(res => {
+    console.log(res);
   })
-    .then(dispatch(fetchCat()))
+  .then(() => dispatch(fetchCat()))
 }

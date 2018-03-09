@@ -24,23 +24,23 @@ export const fetchDogError = () => ({
 //Async Actions
 
 //Fetch Dog
-export const fetchDog = dog => dispatch => {
+export const fetchDog = () => dispatch => {
   dispatch(fetchDogRequest);
-  fetch(`${REACT_APP_API_BASE_URL}/cat`, {
+  fetch(`${REACT_APP_API_BASE_URL}/dog`, {
     method: 'GET',
     })
     .then((res) => res.json())
     .then(dog => {
-      console.log(dog);
+      // console.log(dog);
+      dispatch(fetchDogSuccess(dog));
     })
     .catch(err => dispatch(fetchDogError(err)));
 }
 
-
 //Adopt Dog
-export const adoptDog = dog => dispatch => {
-  fetch(`${REACT_APP_API_BASE_URL}/cat`, {
+export const adoptDog = () => dispatch => {
+  fetch(`${REACT_APP_API_BASE_URL}/dog`, {
     method: 'DELETE',
   })
-    .then(dispatch(fetchDog()))
+    .then(() => dispatch(fetchDog()))
 }
