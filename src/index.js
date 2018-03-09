@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { Provider } from 'react-redux';
 import Dashboard from './Dashboard';
+import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
 const catToAdopt = {
@@ -23,6 +25,16 @@ const dogToAdopt = {
   breed: 'Golden Retriever',
   story: 'Owner Passed away'
 }
+
+console.log(store.getState());
+
+// ReactDOM.render(
+//   <Provider store={store}>
+//       <Dashboard />
+//   </Provider>,
+//   document.getElementById('root'));
+// registerServiceWorker();
+
 
 ReactDOM.render(<Dashboard catToAdopt={catToAdopt} dogToAdopt={dogToAdopt} />, document.getElementById('root'));
 registerServiceWorker();
