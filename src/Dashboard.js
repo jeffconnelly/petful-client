@@ -1,10 +1,10 @@
 import React from 'react';
 import Pet from './components/Pet'
+import './Dashboard.css';
 import { connect } from 'react-redux';
 import {fetchCat, adoptCat} from './actions/cat';
 import {fetchDog, adoptDog} from './actions/dog';
-// import {adoptCat} from './actions/cat';
-// import {adoptDog} from './actions/dog';
+
 
 export class Dashboard extends React.Component {
 
@@ -23,7 +23,7 @@ export class Dashboard extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='pet-page-wrapper'>
         <Pet petToAdopt={this.props.catToAdopt} onAdoptPet={() => this.catAdopt()}/>
         <Pet petToAdopt={this.props.dogToAdopt} onAdoptPet={() => this.dogAdopt()}/>
       </div>
@@ -36,13 +36,4 @@ const mapStateToProps = state => ({
   dogToAdopt: state.dogReducer.data
 });
 
-
 export default connect (mapStateToProps)(Dashboard);
-
-
-
-
- 
-
-
-

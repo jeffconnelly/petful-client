@@ -1,0 +1,35 @@
+.adopt-section {
+  margin: 20px;
+}
+
+header {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-left: 0;
+  padding-top: 3px;
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: inherit;
+  height: 26px;
+}
+
+@media only screen and (min-width: 640px) {
+  img {
+   max-width: 500px;
+  }
+}
