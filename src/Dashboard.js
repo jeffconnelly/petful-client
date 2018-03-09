@@ -1,52 +1,53 @@
 import React from 'react';
 
-export default function Dashboard(animal) {
+export default function Dashboard(props) {
 
-  console.log(animal.dogToAdopt);
+  console.log(props.dogToAdopt);
 
-  console.log(animal.catToAdopt);
+  console.log(props.catToAdopt);
 
   return (
     <div>
-    <section>
-      <header>{animal.catToAdopt.name}</header>
-      <img src={animal.catToAdopt.imageURL} alt=""/>
+      <section>
+      <header>{props.catToAdopt.name}</header>
+      <img src={props.catToAdopt.imageURL} alt=""/>
       <main>
       <h2>More about Cat</h2>
         <dl>
           <dt>Sex:</dt>
-          <dd>{animal.catToAdopt.sex}</dd>
+          <dd>{props.catToAdopt.sex}</dd>
           <dt>Age</dt>
-          <dd>{animal.catToAdopt.age}</dd>
+          <dd>{props.catToAdopt.age}</dd>
           <dt>Breed</dt>
-          <dd>{animal.catToAdopt.breed}</dd>
+          <dd>{props.catToAdopt.breed}</dd>
           <dt>Story</dt>
-          <dd>{animal.catToAdopt.story}</dd>
+          <dd>{props.catToAdopt.story}</dd>
         </dl>
         <button>Adopt!</button>
       </main>
-    </section>
+      </section>
 
-    <section>
-    <header>{animal.dogToAdopt.name}</header>
-    <img src={animal.dogToAdopt.imageURL} alt=""/>
-    <main>
-    <h2>More about Dog</h2>
+      <section>
+      <header>{props.dogToAdopt.name}</header>
+      <img src={props.dogToAdopt.imageURL} alt=""/>
+      <main>
+      <h2>More about Dog</h2>
       <dl>
         <dt>Sex:</dt>
-        <dd>{animal.dogToAdopt.sex}</dd>
+        <dd>{props.dogToAdopt.sex}</dd>
         <dt>Age</dt>
-        <dd>{animal.dogToAdopt.age}</dd>
+        <dd>{props.dogToAdopt.age}</dd>
         <dt>Breed</dt>
-        <dd>{animal.dogToAdopt.breed}</dd>
+        <dd>{props.dogToAdopt.breed}</dd>
         <dt>Story</dt>
-        <dd>{animal.dogToAdopt.story}</dd>
+        <dd>{props.dogToAdopt.story}</dd>
       </dl>
-    <button>Adopt!</button>
-    </main>
-  </section>
-  </div>
+      <button>Adopt!</button>
+      </main>
+      </section>
+    </div>
   );
 }
+
 
 

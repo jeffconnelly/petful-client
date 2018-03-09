@@ -24,5 +24,5 @@ const dogToAdopt = {
   story: 'Owner Passed away'
 }
 
-ReactDOM.render(<Dashboard dogToAdopt={dogToAdopt} catToAdopt={catToAdopt}/>, document.getElementById('root'));
+ReactDOM.render(<Dashboard catToAdopt={catToAdopt} dogToAdopt={dogToAdopt} />, document.getElementById('root'));
 registerServiceWorker();
